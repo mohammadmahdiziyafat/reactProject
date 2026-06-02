@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { func, PropTypes } from "prop-types"
 // component class
 // class Counter extends Component {
 // static defaultProps = {
@@ -13,17 +14,25 @@ import { Component } from "react";
 //     );
 //   }
 // }
-const Counter = (props) => {
-  console.log(props);
+const Counter = ({ inc, dec, reset, count }) => {
+
 
   return (
     <div>
-      <p> شمارنده من :{props.count || 25}</p>
-      <p> {props.children} </p>
+      <h1>{count}</h1>
+      <button onClick={inc}>+</button>
+      <button onClick={dec}>-</button>
+      <button onClick={reset}>reset</button>
+
     </div>
   );
 };
-
+Counter.propTypes = {
+  inc: PropTypes.func,
+  dec: PropTypes.func,
+  reset: PropTypes.func,
+  count: PropTypes.number,
+}
 
 
 export default Counter;

@@ -52,19 +52,19 @@ import './App.css';
 
 // }
 const App = () => {
-    const [count , setCount] = useState(0);
-    const ChangeState = () => {
-        setCount(Math.floor(Math.random()*1000))
-    }
+    const [count, setCount] = useState(0);
+    // const ChangeState = () => {
+    //     setCount(Math.floor(Math.random()*1000))
+    // }
     // or 
     const increaseCount = () => {
-        setCount(count + 1 )
+        setCount(count + 1)
     }
     const decreaseCount = () => {
-        setCount(count -1)
+        setCount(count - 1)
     }
     const reset = () => {
-        setCount (0)
+        setCount(0)
     }
     return (
         <div
@@ -73,9 +73,9 @@ const App = () => {
                 <h1>شمارنده ی من </h1>
             </header>
             <p> {count} :شمارنده </p>
-           <button onClick={increaseCount}> +</button>
-           <button onClick={decreaseCount}> -</button>
-           <button onClick={reset}>reset</button>
+            <Counter inc={increaseCount} dec={decreaseCount} reset={reset} count={count} />
+
+
 
             {/* <Counter>
                 my counter
