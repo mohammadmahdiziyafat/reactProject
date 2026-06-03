@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { func, PropTypes } from "prop-types"
+import { func, PropTypes } from "prop-types";
 // component class
 // class Counter extends Component {
 // static defaultProps = {
@@ -15,15 +15,15 @@ import { func, PropTypes } from "prop-types"
 //   }
 // }
 const Counter = ({ inc, dec, reset, count }) => {
-
-
   return (
     <div>
-      <h1>{count}</h1>
+      <h1 style={{ color: count === 0 ? "gray" : "white" }}>{count}</h1>
       <button onClick={inc}>+</button>
-      <button onClick={dec}>-</button>
+      <button onClick={dec} disabled={count === 0}>
+        -
+      </button>
+      <br />
       <button onClick={reset}>reset</button>
-
     </div>
   );
 };
@@ -32,7 +32,6 @@ Counter.propTypes = {
   dec: PropTypes.func,
   reset: PropTypes.func,
   count: PropTypes.number,
-}
-
+};
 
 export default Counter;

@@ -61,6 +61,10 @@ const App = () => {
         setCount(count + 1)
     }
     const decreaseCount = () => {
+        if(count === 0)
+        {
+            return
+        }
         setCount(count - 1)
     }
     const reset = () => {
@@ -69,10 +73,11 @@ const App = () => {
     return (
         <div
             className='count'>
-            <header>
-                <h1>شمارنده ی من </h1>
+            <header className='App-header'>
+                <h1 className='H1'>شمارنده ی من </h1>
+                
             </header>
-            <p> {count} :شمارنده </p>
+           
             <Counter inc={increaseCount} dec={decreaseCount} reset={reset} count={count} />
 
 
